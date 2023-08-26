@@ -27,14 +27,12 @@ class main_game():
           if user_decision == 1:
                print("*" * 30)
                while True:
-                    global c_rnd
                     a = computers_number(self)
                     a.random_number()
                     c_rnd = a.random_number()
                     print(c_rnd)
                               
                     try:
-                         #global user_guess 
                          user_guess = int((input("Choose a number between 1 and 100: ")))
                          break
                     except:
@@ -45,30 +43,28 @@ class main_game():
                     b = main_game()
                     b.check_winner()
 
-               if user_guess != c_rnd:
-                    while True:
-                         if user_guess >  c_rnd:
-                              print("hmmmmm... ")
-                              time.sleep(2)
-                              print("The guess is wrong.")
-                              print("You are higher than the number!")
-                              user_guess = int(input("Try again: "))
-                              if user_guess == c_rnd:
-                                   c = main_game()
-                                   c.check_winner()
-                                   break
+               while user_guess != c_rnd:
+                    if user_guess >  c_rnd:
+                         print("hmmmmm... ")
+                         time.sleep(2)
+                         print("The guess is wrong.")
+                         print("You are higher than the number!")
+                         try_again = int(input("Try again: "))
 
-
-                         elif user_guess < c_rnd:
-                              print("hmmmm... ")
-                              time.sleep(2)
-                              print("The guess is wrong.")
-                              print("You are lower than the number!")
-                              user_guess = int(input("Try again: "))
-                              if user_guess == c_rnd:
-                                   c = main_game()
-                                   c.check_winner()
-                                   break
+                         if try_again == c_rnd:
+                              c = main_game()
+                              c.check_winner()
+                             
+                                   
+                    elif user_guess < c_rnd:
+                         print("hmmmm... ")
+                         time.sleep(2)
+                         print("The guess is wrong.")
+                         print("You are lower than the number!")
+                         try_again = int(input("Try again: "))
+                         if try_again == c_rnd:
+                              c = main_game()
+                              c.check_winner()
                
           if user_decision == 2:
                num = int(input("Enter a number: "))
