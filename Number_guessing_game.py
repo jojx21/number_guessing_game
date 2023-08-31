@@ -30,7 +30,7 @@ class main_game():
                     a = computers_number(self)
                     a.random_number()
                     c_rnd = a.random_number()
-                    print(c_rnd)
+                  
                               
                     try:
                          user_guess = int((input("Choose a number between 1 and 100: ")))
