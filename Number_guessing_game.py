@@ -87,6 +87,8 @@ class main_game():
                elif guess < num:
                     low = guess + 1
                     print("The computer guessed", guess, "and it was correct!")
+                    e = main_game()
+                    e.check_winner()     
 
 
                    #The algorithm works by selecting a low and high limit to start with (in your case low=1 and high=100).
